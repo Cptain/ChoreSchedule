@@ -1,0 +1,169 @@
+@use "../base/breakpoints" as *;
+
+:root {
+  --navbar: 73px;
+  --subnav: 129px;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+
+  @include breakpoint(sm-tablet) {
+    padding: 3rem 2rem;
+  }
+
+  @include breakpoint(sm-mobile) {
+    padding: 3rem 1rem;
+  }
+
+  &--m300 {
+    padding: 3rem 2rem 6rem;
+
+    @include breakpoint(lg-tablet) {
+      padding: 2rem 2rem 0;
+    }
+
+    @include breakpoint(md-tablet) {
+      padding: 2rem 2rem 1rem;
+    }
+
+    @include breakpoint(md-mobile) {
+      padding: 2rem 2rem 5rem;
+    }
+  }
+
+  &--i300 {
+    padding: 3rem 2rem 2rem;
+
+    @include breakpoint(lg-tablet) {
+      padding: 2rem 2rem 0;
+    }
+
+    @include breakpoint(md-tablet) {
+      padding: 2rem 2rem 1rem;
+    }
+
+    @include breakpoint(md-mobile) {
+      padding: 2rem;
+    }
+  }
+
+  &--full-width {
+    max-width: 100%;
+  }
+
+  &--lg {
+    padding: 4rem 2rem;
+  }
+
+  &--md {
+    padding: 2rem;
+  }
+
+  &--sm {
+    padding: 0 2rem;
+  }
+
+  &__promotion {
+    max-width: 420px;
+    margin: 0 auto;
+
+    @include breakpoint(lg-tablet) {
+      margin: auto;
+    }
+  }
+
+  /* The reason for the following two classes is to push down the main content because GSAP SmoothScroller adds a position:fixed container around the main content with an inset:0px which forces the content to move all the way to the top of the page and gets overlapped by the navbar and subnav */
+
+  &--navbar {
+    padding-top: calc(var(--navbar) + 4rem); // 73px is the height of the navbar
+
+    @include breakpoint(md-mobile) {
+      padding-top: calc(var(--navbar) - 2rem);
+    }
+  }
+
+  &--subnav {
+    padding-top: calc(var(--subnav) + 4rem); // 128px is the height of the navbar (73px) + subnav (~56px)
+
+    @include breakpoint(md-mobile) {
+      padding-top: calc(var(--navbar) - 2rem);
+    }
+  }
+}
+
+.gap {
+  &--xsm {
+    gap: 0.25rem;
+  }
+
+  &--sm {
+    gap: 0.5rem;
+  }
+
+  &--md {
+    gap: 1rem;
+  }
+
+  &--lg {
+    gap: 1.5rem;
+  }
+
+  &--xlg {
+    gap: 2rem;
+  }
+
+  &--xxlg {
+    gap: 3rem;
+  }
+}
+
+.mtop {
+  &--sm {
+    margin-top: 0.5rem;
+  }
+
+  &--md {
+    margin-top: 1rem;
+  }
+
+  &--lg {
+    margin-top: 2rem;
+  }
+
+  &--xl {
+    margin-top: 3rem;
+  }
+
+  &--xxl {
+    margin-top: 4rem;
+  }
+}
+
+.mbot {
+  &--sm {
+    margin-bottom: 0.5rem;
+  }
+
+  &--md {
+    margin-bottom: 1rem;
+  }
+
+  &--lg {
+    margin-bottom: 2rem;
+  }
+
+  &--xl {
+    margin-bottom: 3rem;
+  }
+
+  &--xxl {
+    margin-bottom: 4rem;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
