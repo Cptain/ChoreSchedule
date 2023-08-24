@@ -14,55 +14,72 @@
 // the cookie is also used to remember the week number when the computer is turned off and on
 // the cookie is also used to remember the week number when the computer is unplugged and plugged in
 // the function is called when the page is loaded
-
-window.onload = detectWeek();
-
-function setCookie(cname, cvalue, exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000); // 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
-  var expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"; // path=/ means the cookie is available in all paths of the website
-}
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie); // decodeURIComponent is used to decode a URI component
-  var ca = decodedCookie.split(";"); // split the cookie into an array of strings
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == " ") {
-      // remove whitespace from the beginning of the string
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      // if the cookie name is found at the beginning of the string
-      return c.substring(name.length, c.length); // return the cookie value
-    }
-  }
-  return "";
-}
+// write a function that based on the current week, it changes certain elements of the page
+// when it's week 2 the h5 child element with a parent div of "dropdown__text" should say "Katrina & ICE", the small element should say "Snow Leopards" the img with class "icon--md" should have a source of "images/icons/leopard.svg" and an alt of "Katrina & ICE"
+// when it's week 3 the h5 child element with a parent div of "dropdown__text" should say "Milan & Hugo", the small element should say "School Bus Drivers" the img with class "icon--md" should have a source of "images/icons/bus.svg" and an alt of "Milan & Hugo"
+// when it's week 4 the h5 child element with a parent div of "dropdown__text" should say "Ben & Nico", the small element should say "HR Hazard" the img with class "icon--md" should have a source of "images/icons/hazard.svg" and an alt of "Ben & Nico"
+// when it's week 5 the h5 child element with a parent div of "dropdown__text" should say "Liam & Mark", the small element should say "Biz Wizs" the img with class "icon--md" should have a source of "images/icons/suitcase.svg" and an alt of "Liam & Mark"
+// when it's week 6 the h5 child element with a parent div of "dropdown__text" should say "Manesha & Prasanth", the small element should say "Sweet Munchkins" the img with class "icon--md" should have a source of "images/icons/cat.svg" and an alt of "Manesha & Prasanth"
 
 function detectWeek() {
-  var week = getCookie("week"); // get the week number from the cookie
-  if (week == "") {
-    // if the cookie is empty
-    week = 1; // set the week number to 1
-    setCookie("week", week, 365); // set the cookie
+  const startDate = new Date('August 28, 2023');
+  const today = new Date();
+  const timeDiff = today.getTime() - startDate.getTime();
+  const week = Math.ceil(timeDiff / (1000 * 3600 * 24 * 7)) % 7 || 7;
+  const dataWeek = document.querySelector('[data-week]');
+  if (dataWeek) {
+    dataWeek.setAttribute('data-week', week);
+    dataWeek.textContent = `${week}`;
   }
-  var d = new Date(); // get the current date
-  var n = d.getDay(); // get the current day of the week
-  if (n == 0) {
-    // if the current day of the week is Sunday
-    week++; // increment the week number
-    if (week > 6) {
-      // if the week number is greater than 6
-      week = 1; // reset the week number to 1
+  const dropdownText = document.querySelector('.dropdown__text h5');
+  const small = document.querySelector('.dropdown__text small');
+  const icon = document.querySelector('.icon--md');
+  if (dropdownText && small && icon) {
+    switch (5) {
+      case 2:
+        dropdownText.textContent = 'Katrina & ICE';
+        small.textContent = 'Snow Leopards';
+        icon.src = 'images/icons/leopard.svg';
+        icon.alt = 'Katrina & ICE';
+        break;
+      case 3:
+        dropdownText.textContent = 'Milan & Hugo';
+        small.textContent = 'School Bus Drivers';
+        icon.src = 'images/icons/bus.svg';
+        icon.alt = 'Milan & Hugo';
+        break;
+      case 4:
+        dropdownText.textContent = 'Ben & Nico';
+        small.textContent = 'HR Hazard';
+        icon.src = 'images/icons/hazard.svg';
+        icon.alt = 'Ben & Nico';
+        break;
+      case 5:
+        dropdownText.textContent = 'Liam & Mark';
+        small.textContent = 'Smells Fishy';
+        icon.src = 'images/icons/sushi.svg';
+        icon.alt = 'Liam & Mark';
+        break;
+      case 6:
+        dropdownText.textContent = 'Manesha & Prasanth';
+        small.textContent = 'Sweet Munchkins';
+        icon.src = 'images/icons/cat.svg';
+        icon.alt = 'Manesha & Prasanth';
+        break;
+        case 7:
+          dropdownText.textContent = 'Parth & Hyeseong';
+          small.textContent = 'Enjoy the Silence';
+          icon.src = 'images/icons/mute.svg';
+          icon.alt = 'Parth & Hyeseong';
+          break;
+      default:
+        dropdownText.textContent = 'Nicholas & Benji';
+        small.textContent = 'Respectfully Loud';
+        icon.src = 'images/icons/peace.svg';
+        icon.alt = 'Nicholas & Benji';
+        break;
     }
-    setCookie("week", week, 365); // set the cookie
   }
-  document.getElementById("week").innerHTML = week; // display the week number
-  document.getElementById("week").setAttribute("data-week", week); // store the week number in a data-attribute
-
-  console.log(d);
-  console.log(n);
 }
+
+detectWeek();
