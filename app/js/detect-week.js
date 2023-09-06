@@ -44,10 +44,10 @@ function detectWeek() {
         console.log("2 case");
         break;
       case 3:
-        dropdownText.textContent = "Milan & Hugo";
+        dropdownText.textContent = "Persia & Hugo";
         small.textContent = "School Bus Drivers";
         icon.src = "images/icons/bus.svg";
-        icon.alt = "Milan & Hugo";
+        icon.alt = "Persia & Hugo";
         console.log("3 case");
         break;
       case 4:
