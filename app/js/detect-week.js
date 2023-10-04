@@ -70,10 +70,10 @@ function detectWeek() {
         console.log("6 case");
         break;
       case 7:
-        dropdownText.textContent = "Parth & Hyeseong";
-        small.textContent = "Enjoy the Silence";
-        icon.src = "images/icons/mute.svg";
-        icon.alt = "Parth & Hyeseong";
+        dropdownText.textContent = "Mark & Liam";
+        small.textContent = "Smells Fishy";
+        icon.src = "images/icons/sushi.svg";
+        icon.alt = "Mark & Liam";
         console.log("7 case");
         break;
       default:
