@@ -22,61 +22,61 @@
 // when it's week 6 the h5 child element with a parent div of "dropdown__text" should say "Manesha & Prasanth", the small element should say "Sweet Munchkins" the img with class "icon--md" should have a source of "images/icons/cat.svg" and an alt of "Manesha & Prasanth"
 
 function detectWeek() {
-  const startDate = new Date('August 28, 2023');
+  const startDate = new Date("August 28, 2023");
   const today = new Date();
   const timeDiff = today.getTime() - startDate.getTime();
   const week = Math.ceil(timeDiff / (1000 * 3600 * 24 * 7)) % 7 || 7;
-  const dataWeek = document.querySelector('[data-week]');
+  const dataWeek = document.querySelector("[data-week]");
   if (dataWeek) {
-    dataWeek.setAttribute('data-week', week);
+    dataWeek.setAttribute("data-week", week);
     dataWeek.textContent = `${week}`;
   }
-  const dropdownText = document.querySelector('.dropdown__text h5');
-  const small = document.querySelector('.dropdown__text small');
-  const icon = document.querySelector('.icon--md');
+  const dropdownText = document.querySelector(".dropdown__text h5");
+  const small = document.querySelector(".dropdown__text small");
+  const icon = document.querySelector(".icon--md");
   if (dropdownText && small && icon) {
     switch (5) {
       case 2:
-        dropdownText.textContent = 'Katrina & ICE';
-        small.textContent = 'Snow Leopards';
-        icon.src = 'images/icons/leopard.svg';
-        icon.alt = 'Katrina & ICE';
+        dropdownText.textContent = "Katrina & ICE";
+        small.textContent = "Snow Leopards";
+        icon.src = "images/icons/leopard.svg";
+        icon.alt = "Katrina & ICE";
         break;
       case 3:
-        dropdownText.textContent = 'Milan & Hugo';
-        small.textContent = 'School Bus Drivers';
-        icon.src = 'images/icons/bus.svg';
-        icon.alt = 'Milan & Hugo';
+        dropdownText.textContent = "Milan & Hugo";
+        small.textContent = "School Bus Drivers";
+        icon.src = "images/icons/bus.svg";
+        icon.alt = "Milan & Hugo";
         break;
       case 4:
-        dropdownText.textContent = 'Ben & Nico';
-        small.textContent = 'HR Hazard';
-        icon.src = 'images/icons/hazard.svg';
-        icon.alt = 'Ben & Nico';
+        dropdownText.textContent = "Ben & Nico";
+        small.textContent = "HR Hazard";
+        icon.src = "images/icons/hazard.svg";
+        icon.alt = "Ben & Nico";
         break;
       case 5:
-        dropdownText.textContent = 'Liam & Mark';
-        small.textContent = 'Smells Fishy';
-        icon.src = 'images/icons/sushi.svg';
-        icon.alt = 'Liam & Mark';
+        dropdownText.textContent = "Parth & Hyeseong";
+        small.textContent = "Enjoy the Silence";
+        icon.src = "images/icons/mute.svg";
+        icon.alt = "Parth & Hyeseong";
         break;
       case 6:
-        dropdownText.textContent = 'Manesha & Prasanth';
-        small.textContent = 'Sweet Munchkins';
-        icon.src = 'images/icons/cat.svg';
-        icon.alt = 'Manesha & Prasanth';
+        dropdownText.textContent = "Manesha & Prasanth";
+        small.textContent = "Sweet Munchkins";
+        icon.src = "images/icons/cat.svg";
+        icon.alt = "Manesha & Prasanth";
         break;
-        case 7:
-          dropdownText.textContent = 'Parth & Hyeseong';
-          small.textContent = 'Enjoy the Silence';
-          icon.src = 'images/icons/mute.svg';
-          icon.alt = 'Parth & Hyeseong';
-          break;
+      case 7:
+        dropdownText.textContent = "Liam & Mark";
+        small.textContent = "Smells Fishy";
+        icon.src = "images/icons/sushi.svg";
+        icon.alt = "Liam & Mark";
+        break;
       default:
-        dropdownText.textContent = 'Nicholas & Benji';
-        small.textContent = 'Respectfully Loud';
-        icon.src = 'images/icons/peace.svg';
-        icon.alt = 'Nicholas & Benji';
+        dropdownText.textContent = "Nicholas & Benji";
+        small.textContent = "Respectfully Loud";
+        icon.src = "images/icons/peace.svg";
+        icon.alt = "Nicholas & Benji";
         break;
     }
   }
