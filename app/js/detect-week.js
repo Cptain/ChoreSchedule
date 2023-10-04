@@ -35,18 +35,20 @@ function detectWeek() {
   const small = document.querySelector(".dropdown__text small");
   const icon = document.querySelector(".icon--md");
   if (dropdownText && small && icon) {
-    switch (5) {
+    switch (week) {
       case 2:
         dropdownText.textContent = "Katrina & ICE";
         small.textContent = "Snow Leopards";
         icon.src = "images/icons/leopard.svg";
         icon.alt = "Katrina & ICE";
+        console.log("2 case");
         break;
       case 3:
-        dropdownText.textContent = "Milan & Hugo";
+        dropdownText.textContent = "Persia & Hugo";
         small.textContent = "School Bus Drivers";
         icon.src = "images/icons/bus.svg";
-        icon.alt = "Milan & Hugo";
+        icon.alt = "Persia & Hugo";
+        console.log("3 case");
         break;
       case 4:
         dropdownText.textContent = "Ben & Nico";
@@ -65,12 +67,14 @@ function detectWeek() {
         small.textContent = "Sweet Munchkins";
         icon.src = "images/icons/cat.svg";
         icon.alt = "Manesha & Prasanth";
+        console.log("6 case");
         break;
       case 7:
-        dropdownText.textContent = "Liam & Mark";
-        small.textContent = "Smells Fishy";
-        icon.src = "images/icons/sushi.svg";
-        icon.alt = "Liam & Mark";
+        dropdownText.textContent = "Parth & Hyeseong";
+        small.textContent = "Enjoy the Silence";
+        icon.src = "images/icons/mute.svg";
+        icon.alt = "Parth & Hyeseong";
+        console.log("7 case");
         break;
       default:
         dropdownText.textContent = "Nicholas & Benji";
