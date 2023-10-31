@@ -32,11 +32,14 @@ table {
 
 .table {
   background-color: var(--blue-50);
-  box-shadow: 0px 48px 96px 0px hsla(213, 80%, 50%, 0.25);
-  border-radius: 10px;
-  overflow: hidden;
 
   &__container {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--blue-100);
+    box-shadow: 0px 14px 36px 0px hsla(213, 80%, 50%, 0.10);
+
+
     @include breakpoint(sm-tablet) {
       position: relative;
       overflow-x: scroll;
