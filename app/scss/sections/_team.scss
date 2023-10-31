@@ -1,16 +1,26 @@
 @use "../base/breakpoints" as *;
 
 .team {
-  background-color: white;
+  background-color: var(--blue-900);
   padding: 0.5rem 1rem;
   border-radius: 10px;
-  border: 1px solid var(--blue-100);
+  animation: glow 1s ease-in-out infinite forwards alternate;
 
   @media (max-width: 1080px) {
     flex-direction: column;
     gap: 0;
     margin: 0 auto;
     max-width: 300px;
+  }
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 0px 1px hsl(216, 100%, 89%);
+    }
+
+    100% {
+      box-shadow: 0 0 0px 8px hsl(221, 97%, 61%);
+    }
   }
 
   @include breakpoint(md-mobile) {
