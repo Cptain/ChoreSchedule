@@ -37,10 +37,10 @@ function detectWeek() {
   if (dropdownText && small && icon) {
     switch (week) {
       case 2:
-        dropdownText.textContent = "Katrina & ICE";
+        dropdownText.textContent = "ICE";
         small.textContent = "Snow Leopards";
         icon.src = "images/icons/leopard.svg";
-        icon.alt = "Katrina & ICE";
+        icon.alt = "ICE";
         console.log("2 case");
         break;
       case 3:
