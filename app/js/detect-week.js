@@ -32,55 +32,57 @@ function detectWeek() {
     dataWeek.textContent = `${week}`;
   }
   const dropdownText = document.querySelector(".dropdown__text h5");
-  const small = document.querySelector(".dropdown__text small");
-  const icon = document.querySelector(".icon--md");
-  if (dropdownText && small && icon) {
+  // const small = document.querySelector(".dropdown__text small");
+  if (dropdownText) {
     switch (week) {
       case 2:
-        dropdownText.textContent = "ICE";
-        small.textContent = "Snow Leopard";
-        icon.src = "images/icons/leopard.svg";
-        icon.alt = "ICE";
+        dropdownText.textContent = "Anakin & ICE";
+        // small.textContent = "Snow Leopards";
+        // icon.src = "images/icons/leopard.svg";
+        // icon.alt = "Anakin & ICE";
         console.log("2 case");
         break;
       case 3:
         dropdownText.textContent = "Persia & Hugo";
-        small.textContent = "School Bus Drivers";
-        icon.src = "images/icons/bus.svg";
-        icon.alt = "Persia & Hugo";
+        // small.textContent = "School Bus Drivers";
+        // icon.src = "images/icons/bus.svg";
+        // icon.alt = "Persia & Hugo";
         console.log("3 case");
         break;
       case 4:
         dropdownText.textContent = "Ben & Nico";
-        small.textContent = "HR Hazard";
-        icon.src = "images/icons/hazard.svg";
-        icon.alt = "Ben & Nico";
+        // small.textContent = "HR Hazard";
+        // icon.src = "images/icons/hazard.svg";
+        // icon.alt = "Ben & Nico";
+        console.log("4 case");
         break;
       case 5:
-        dropdownText.textContent = "Parth & Hyeseong";
-        small.textContent = "Enjoy the Silence";
-        icon.src = "images/icons/mute.svg";
-        icon.alt = "Parth & Hyeseong";
+        dropdownText.textContent = "Tarik & Mark";
+        // small.textContent = "Smells Fishy";
+        // icon.src = "images/icons/sushi.svg";
+        // icon.alt = "Liam & Mark";
+        console.log("5 case");
         break;
       case 6:
         dropdownText.textContent = "Manesha & Prasanth";
-        small.textContent = "Sweet Munchkins";
-        icon.src = "images/icons/cat.svg";
-        icon.alt = "Manesha & Prasanth";
+        // small.textContent = "Sweet Munchkins";
+        // icon.src = "images/icons/cat.svg";
+        // icon.alt = "Manesha & Prasanth";
         console.log("6 case");
         break;
       case 7:
-        dropdownText.textContent = "Mark & Liam";
-        small.textContent = "Smells Fishy";
-        icon.src = "images/icons/sushi.svg";
-        icon.alt = "Mark & Liam";
+        dropdownText.textContent = "Alex & Cathy";
+        // small.textContent = "Enjoy the Silence";
+        // icon.src = "images/icons/mute.svg";
+        // icon.alt = "Parth & Hyeseong";
         console.log("7 case");
         break;
       default:
         dropdownText.textContent = "Nicholas & Benji";
-        small.textContent = "Respectfully Loud";
-        icon.src = "images/icons/peace.svg";
-        icon.alt = "Nicholas & Benji";
+        // small.textContent = "Respectfully Loud";
+        // icon.src = "images/icons/peace.svg";
+        // icon.alt = "Nicholas & Benji";
+        console.log("1 case");
         break;
     }
   }
