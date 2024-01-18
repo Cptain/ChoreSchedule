@@ -57,7 +57,7 @@ function detectWeek() {
         console.log("4 case");
         break;
       case 5:
-        dropdownText.textContent = "Tarik & Mark";
+        dropdownText.textContent = "Alex & Cathy";
         // small.textContent = "Smells Fishy";
         // icon.src = "images/icons/sushi.svg";
         // icon.alt = "Liam & Mark";
@@ -71,7 +71,7 @@ function detectWeek() {
         console.log("6 case");
         break;
       case 7:
-        dropdownText.textContent = "Alex & Cathy";
+        dropdownText.textContent = "Tarik & Mark";
         // small.textContent = "Enjoy the Silence";
         // icon.src = "images/icons/mute.svg";
         // icon.alt = "Parth & Hyeseong";
